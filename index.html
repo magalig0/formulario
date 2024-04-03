@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Inicio de Sesión</title>
+  <style>
+    input[type="text"], input[type="number"], input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    .error {
+      color: red;
+    }
+    .placeholder {
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Formulario de Inicio de Sesión</h2>
+
+<form id="loginForm" onsubmit="return validarFormulario()">
+  <label style="color: #ac0b0b;" for="nombre">Ingrese su nombre:</label>
+  <input style="color: #ac0b0b;" type="text" id="nombre" name="nombre" placeholder="Ingrese un nombre..." required>
+  <label style="color: #ac0b0b;" for="edad">Edad:</label>
+  <input style="color: #ac0b0b;" type="number" id="edad" name="edad" placeholder="Ingrese su edad..." required>
+  <label style="color: #ac0b0b;" for="correo">Correo:</label>
+  <input style="color: #ac0b0b;" type="email" id="correo" name="correo" placeholder="Ingrese su correo..." required>
+  <input style="color: rgb(0, 0, 0);" type="submit" value="Enviar">
+</form>
+
+<script>
+  function validarFormulario() {
+    var nombre = document.getElementById('nombre').value;
+    var edad = document.getElementById('edad').value;
+    var correo = document.getElementById('correo').value;
+
+    var regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+    if (nombre === "" || edad === "" || correo === "") {
+      alert("Por favor complete todos los campos");
+      return false;
+    } else if (isNaN(edad)) {
+      alert("La edad debe ser un número");
+      return false;
+    } else if (!regexCorreo.test(correo)) {
+      alert("El formato del correo no es válido");
+      return false;
+    }
+
+    return true;
+  }
+</script>
+
+</body>
+</html>
