@@ -32,42 +32,73 @@
     }
   </style>
 </head>
+
+<nav> Inicio Formulario </nav>
+
 <body>
 
-<h2>Formulario de Inicio de Sesión</h2>
+<aside>
+  Iniciar sesion
+</aside>
 
-<form id="loginForm" onsubmit="return validarFormulario()">
-  <label style="color: #ac0b0b;" for="nombre">Ingrese su nombre:</label>
-  <input style="color: #ac0b0b;" type="text" id="nombre" name="nombre" placeholder="Ingrese un nombre..." required>
-  <label style="color: #ac0b0b;" for="edad">Edad:</label>
-  <input style="color: #ac0b0b;" type="number" id="edad" name="edad" placeholder="Ingrese su edad..." required>
-  <label style="color: #ac0b0b;" for="correo">Correo:</label>
-  <input style="color: #ac0b0b;" type="email" id="correo" name="correo" placeholder="Ingrese su correo..." required>
-  <input style="color: rgb(0, 0, 0);" type="submit" value="Enviar">
-</form>
+<main>
+  
+  <article>
+    <header>
+      <h2>Formulario de Inicio de Sesión</h2>
+    </header>
+  </article>
+  
+  <figure>
+    <center> <img src="https://www.cadena3.com/admin/playerswf/fotos/ARCHI_922268.jpg" alt=""width= "300"> </center>
+    <p> Este es un formulario hecho por alumnos para iniciar sesion a una pagina de fans Chano Charpentier </p>
+  </figure>
+  
+  <section> 
+    <footer>Es necesario completar todos los casilleros </footer>
 
-<script>
-  function validarFormulario() {
-    var nombre = document.getElementById('nombre').value;
-    var edad = document.getElementById('edad').value;
-    var correo = document.getElementById('correo').value;
-
-    var regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-
-    if (nombre === "" || edad === "" || correo === "") {
-      alert("Por favor complete todos los campos");
-      return false;
-    } else if (isNaN(edad)) {
-      alert("La edad debe ser un número");
-      return false;
-    } else if (!regexCorreo.test(correo)) {
-      alert("El formato del correo no es válido");
-      return false;
+  <form id="loginForm" onsubmit=" return validarFormulario()">
+    <label style="color: #ac0b0b;" for="nombre">Ingrese su nombre:</label>
+    <input style="color: #ac0b0b;" type="text" id="nombre" name="nombre" placeholder="Ingrese un nombre..." required>
+    <label style="color: #ac0b0b;" for="edad">Edad:</label>
+    <input style="color: #ac0b0b;" type="number" id="edad" name="edad" placeholder="Ingrese su edad..." required>
+    <label style="color: #ac0b0b;" for="correo">Correo:</label>
+    <input style="color: #ac0b0b;" type="email" id="correo" name="correo" placeholder="Ingrese su correo..." required>
+    <input style="color: rgb(0, 0, 0);" type="submit" value="Enviar">
+  </form>
+  
+  <script>
+    function validarFormulario() {
+      var nombre = document.getElementById('nombre').value;
+      var edad = document.getElementById('edad').value;
+      var correo = document.getElementById('correo').value;
+  
+      var regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  
+      if (nombre === "" || edad === "" || correo === "") {
+        alert("Por favor complete todos los campos");
+        return false;
+      } else if (isNaN(edad)) {
+        alert("La edad debe ser un número");
+        return false;
+      } else if (!regexCorreo.test(correo)) {
+        alert("El formato del correo no es válido");
+        return false;
+      }
+  
+      return true;
     }
+  </script>
 
-    return true;
-  }
-</script>
+  </section>
+
+</main>
+
+<footer>
+  nuñe
+  badala
+  godoi
+</footer>
 
 </body>
 </html>
